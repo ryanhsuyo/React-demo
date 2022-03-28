@@ -6,12 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import App2 from './App2'
 import App3 from './counter'
 import App4 from './classCounter'
-import App5 from './classCounter2'
-
+import App5 from './classCounter(add&minus)'
+import App6 from './CssInJs'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App5 />
+    <App6 />
   </React.StrictMode>,
   document.getElementById('root')
 );

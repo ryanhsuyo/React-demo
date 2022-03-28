@@ -16,23 +16,19 @@ class Btn extends React.Component<BtnProps, BtnState>{
     }
 }
 
-type MinProps = {}
-type MinState = {
-    count: number
+type MinProps = {
+    minHandler: () => void
 }
+type MinState = {}
 
 class Min extends React.Component<MinProps, MinState>{
     constructor(props: MinProps){
         super(props)
-        this.state = {
-            count: 0
         }
-    }
-    countMinusHandler(){
-    }
+    
     render(): React.ReactNode{
         return<>
-            <button>-1</button>
+            <button onClick={this.props.minHandler}>-1</button>
         </>
     }
 }
@@ -52,10 +48,20 @@ class App5 extends React.Component<AppProps, AppState>{
             count: 0
         }
         this.countClickHandler = this.countClickHandler.bind(this)
+        this.countMinusHandler = this.countMinusHandler.bind(this)
     }
-
+    
+    countMinusHandler(){
+        console.log('減法');
+        this.setState((prevState) => {
+            return{
+                count: prevState.count - 1
+            }
+        })
+        
+    }
     countClickHandler(){
-        console.log('接到了');
+        console.log('加法');
         this.setState((prevState) => {
             return{
                 count: prevState.count + 1
@@ -67,7 +73,7 @@ class App5 extends React.Component<AppProps, AppState>{
         return<>
             <h1>Count: {this.state.count}</h1>
             <Btn clickHandler={this.countClickHandler}/>
-            <Min/>
+            <Min minHandler={this.countMinusHandler}/>
         </>
     }
     componentDidUpdate(){
