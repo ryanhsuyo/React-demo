@@ -8,10 +8,14 @@ import App3 from './counter'
 import App4 from './classCounter'
 import App5 from './classCounter(add&minus)'
 import App6 from './CssInJs'
+import App7 from './Hoc'
+import App8 from './Hook'
+import App9 from './Hook2'
+import App10 from './NewCounter'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App6 />
+    <App10 />
   </React.StrictMode>,
   document.getElementById('root')
 );

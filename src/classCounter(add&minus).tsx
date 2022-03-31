@@ -1,9 +1,11 @@
+import { count } from "console";
 import React from "react";
 
 type BtnProps = {
     clickHandler: () => void
 }
 type BtnState = {}
+
 
 class Btn extends React.Component<BtnProps, BtnState>{
     constructor(props: BtnProps){
